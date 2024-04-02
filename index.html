@@ -1,42 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Tip calculator app</title>
 
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
 
-  Bill
+  <main>
+    <div class="container">
+      <div class="row title">
+        <h1>SPLI<br />TTER</h1>
+      </div>
+      <div class="row form">
+        <form action="" class="column input">
+          <div class="input-wrapper">
+            <label for="bill">Bill</label>
+            <div class="input-frame">
+              <input type="text" class="input" id="bill">
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <label for="">Select Tip %</label>
+            <div class="tip-option">
+              <label for="5" class="custom-label">5%</label>
+              <input type="radio" name="tip" id="5">
+            </div>
+            <div class="tip-option">
+              <label for="10" class="custom-label">10%</label>
+              <input type="radio" name="tip" id="10">
+            </div>
+            <div class="tip-option">
+              <label for="15" class="custom-label">15%</label>
+              <input type="radio" name="tip" id="15">
+            </div>
+            <div class="tip-option">
+              <label for="25" class="custom-label">25%</label>
+              <input type="radio" name="tip" id="25">
+            </div>
+            <div class="tip-option">
+              <label for="50" class="custom-label">50%</label>
+              <input type="radio" name="tip" id="50">
+            </div>
+            <div class="tip-option">
+              <input type="number" name="tip" id="custom" placeholder="Custom">
+            </div>
+          </div>
+          <div class="input-wrapper">
+            <label for="num-people">Number of People</label>
+            <div class="input-frame">
+              <input type="number" class="input" id="num-people">
+            </div>
+          </div>
+        </form>
+        <div class="column output">
+          <div class="results">
+            <div class="row">
+              <div class="key">
+                <h3>Tip Amount</h3>
+                <small>/ person</small>
+              </div>
+              <h2 class="value"></h2>
+            </div>
+            <div class="row">
+              <div class="key">
+                <h3>Total</h3>
+                <small>/ person</small>
+              </div>
+              <h2 class="value"></h2>
+            </div>
+          </div>
+          <button type="reset">Reset</button>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="attribution text-center text-grayish-purple text-sm py-6 lg:text-base">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+      <a href="https://www.linkedin.com/in/aatmaneoulmouden/" target="_blank">Aatmane Oulmouden</a>.
+    </div>
+  </footer>
 
   <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
