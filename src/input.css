@@ -7,6 +7,30 @@
 /* Custom CSS */
 @layer components {
     * {
-        @apply font-main;
+        @apply font-main text-base outline-none;
+    }
+
+    .column {
+        @apply rounded-lg flex-1 p-0;
+    }
+
+    .input-wrapper:not(:last-child) {
+        @apply mb-7;
+    }
+
+    .input-label {
+        @apply text-dark-grayish-cyan block mb-1;
+    }
+
+    .input-frame {
+        @apply bg-very-light-grayish-cyan w-full relative rounded-md overflow-hidden;
+    }
+
+    .input-icon {
+        @apply absolute top-1/2 left-4 -translate-y-1/2;
+    }
+
+    .input-field {
+        @apply bg-transparent w-full py-3 px-4 rounded-md text-right text-xl text-very-dark-cyan border-2 border-transparent focus:border-strong-cyan placeholder:text-grayish-cyan;
     }
 }
