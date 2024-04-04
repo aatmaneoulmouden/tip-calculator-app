@@ -18,6 +18,10 @@
         @apply mb-7;
     }
 
+    .tip-options input[type="radio"] {
+        @apply hidden;
+    }
+
     .input-label {
         @apply text-dark-grayish-cyan block mb-1;
     }
@@ -31,6 +35,10 @@
     }
 
     .input-field {
-        @apply bg-transparent w-full py-3 px-4 rounded-md text-right text-xl text-very-dark-cyan border-2 border-transparent focus:border-strong-cyan placeholder:text-grayish-cyan;
+        @apply bg-transparent w-full py-3 px-4 rounded-md text-right text-xl text-very-dark-cyan border-2 border-transparent bg-very-light-grayish-cyan focus:border-strong-cyan placeholder:text-grayish-cyan;
+    }
+
+    .tip-option label {
+        @apply block py-3 px-4 rounded-md text-center text-xl text-white border-2 border-very-dark-cyan bg-very-dark-cyan;
     }
 }
