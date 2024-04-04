@@ -39,6 +39,10 @@
     }
 
     .tip-option label {
-        @apply block py-3 px-4 rounded-md text-center text-xl text-white border-2 border-very-dark-cyan bg-very-dark-cyan;
+        @apply block py-3 px-4 rounded-md text-center text-xl text-white border-2 border-very-dark-cyan bg-very-dark-cyan hover:text-very-dark-cyan hover:border-strong-cyan hover:bg-strong-cyan;
+    }
+
+    .tip-option label.selected {
+        @apply text-very-dark-cyan bg-strong-cyan border-strong-cyan;
     }
 }
