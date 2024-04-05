@@ -20,7 +20,7 @@
 			<div class="row title">
 				<h1 class="w-fit mx-auto py-9 text-2xl tracking-[8px] text-dark-grayish-cyan">SPLI<br />TTER</h1>
 			</div>
-			<div class="row form bg-white p-7 rounded-3xl shadow-lg max-w-[690px] grid grid-cols-1">
+			<div class="row form bg-white p-7 rounded-3xl rounded-b-none shadow-none max-w-[690px] grid grid-cols-1">
 				<form action="" class="column input pb-8">
 					<div class="input-wrapper">
 						<label for="bill" class="input-label">Bill</label>
@@ -71,31 +71,31 @@
 						</div>
 					</div>
 				</form>
-				<div class="column output bg-very-dark-cyan">
-					<div class="results">
-						<div class="row">
+				<div class="column output bg-very-dark-cyan p-6">
+					<div class="results mb-12">
+						<div class="row mb-6">
 							<div class="key">
 								<h3>Tip Amount</h3>
 								<small>/ person</small>
 							</div>
-							<h2 class="value"></h2>
+							<h2 class="value"><span class="currency">$</span>4.27</h2>
 						</div>
 						<div class="row">
 							<div class="key">
 								<h3>Total</h3>
 								<small>/ person</small>
 							</div>
-							<h2 class="value"></h2>
+							<h2 class="value"><span class="currency">$</span>32.29</h2>
 						</div>
 					</div>
-					<button type="reset">Reset</button>
+					<button type="reset" class="w-full p-3 text-xl text-very-dark-cyan uppercase bg-strong-cyan rounded-md">Reset</button>
 				</div>
 			</div>
 		</div>
 	</main>
 
-	<footer>
-		<div class="attribution text-center text-grayish-purple text-sm py-6 lg:text-base">
+	<footer class="px-4 bg-white text-dark-grayish-cyan">
+		<div class="attribution text-center text-grayish-purple text-base py-6">
 			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
 			Coded by
 			<a href="https://www.linkedin.com/in/aatmaneoulmouden/" target="_blank">Aatmane Oulmouden</a>.

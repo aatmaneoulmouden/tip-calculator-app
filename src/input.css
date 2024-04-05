@@ -45,4 +45,21 @@
     .tip-option label.selected {
         @apply text-very-dark-cyan bg-strong-cyan border-strong-cyan;
     }
+
+    .output .row {
+        @apply flex justify-between items-center;
+    }
+
+    .output .key h3 {
+        @apply text-white text-lg;
+    }
+
+    .output .key small {
+        @apply text-grayish-cyan text-base;
+    }
+
+    .results .value,
+    .results .currency {
+        @apply text-4xl text-strong-cyan;
+    }
 }
