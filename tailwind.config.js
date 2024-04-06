@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./**/*{.html,js}"],
   theme: {
+    container: {
+      padding: {
+        DEFAULT: '0',
+        sm: '0',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
     fontFamily: {
       'main': ['Space Mono', 'monospace'],
     },
@@ -15,6 +24,9 @@ module.exports = {
         'very-light-grayish-cyan': 'hsl(189, 41%, 97%)',
         'white': 'hsl(0, 0%, 100%)',
       },
+      boxShadow: {
+        'main': 'rgba(94, 122, 125, 0.2) 0px 48px 100px 0px',
+      }
     },
   },
   plugins: [],
