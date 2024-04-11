@@ -2310,6 +2310,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -2403,6 +2408,11 @@ video {
 .text-very-dark-cyan{
   --tw-text-opacity: 1;
   color: hsl(183 100% 15% / var(--tw-text-opacity));
+}
+
+.text-rose-700{
+  --tw-text-opacity: 1;
+  color: rgb(190 18 60 / var(--tw-text-opacity));
 }
 
 .underline{
