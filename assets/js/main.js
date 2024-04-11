@@ -64,23 +64,23 @@ let tipValue = null;
 
 const updateTipValue = (newValue) => tipValue = newValue;
 
-const calculateTip = (bill, tip, peopleCount) => {
-    let tipAmount = (parseInt(bill) * (parseInt(tip) / 100)) / parseInt(peopleCount);
-    let total = (bill / peopleCount) + tipAmount;
-    return {
-        'tipAmount': tipAmount,
-        'total': total
-    }
-};
+// const calculateTip = (bill, tip, peopleCount) => {
+//     let tipAmount = (parseInt(bill) * (parseInt(tip) / 100)) / parseInt(peopleCount);
+//     let total = (bill / peopleCount) + tipAmount;
+//     return {
+//         'tipAmount': tipAmount,
+//         'total': total
+//     }
+// };
 
-preDefTipValues.forEach(tip => {
-    tip.addEventListener('change', () => {
-        let htip = updateTipValue(tip.value);
-        let result = calculateTip(100, htip, 5);
-        console.log(result);
-    });
-});
+// preDefTipValues.forEach(tip => {
+//     tip.addEventListener('change', () => {
+//         let htip = updateTipValue(tip.value);
+//         let result = calculateTip(100, htip, 5);
+//         console.log(result);
+//     });
+// });
 
-customTipInput.addEventListener('input', () => {
-    updateTipValue(customTipInput.value);
-});
+// customTipInput.addEventListener('input', () => {
+//     updateTipValue(customTipInput.value);
+// });
