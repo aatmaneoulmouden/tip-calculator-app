@@ -3,8 +3,13 @@
  * 'selected' class from all labels when one is clicked, and removing the 'selected' class when the
  * custom tip input is focused.
  */
+const billInput = document.querySelector('#bill');
+const tipOptionRadios = document.querySelectorAll('[name=tip]');
 const tipOptionLabels = document.querySelectorAll('.tip-option label');
 const customTipInput = document.querySelector('#custom-tip-input');
+const peopleCountInput = document.querySelector('#num-people');
+const tipAmountOutput = document.querySelector('#tip-amount');
+const totalOutput = document.querySelector('#total');
 
 const removeSelectedClass = (toRemoveFromElements) => {
     toRemoveFromElements.forEach(element => {
@@ -24,63 +29,61 @@ customTipInput.addEventListener('focus', () => {
 });
 
 
-/**
- * Calculate the correct tip and total cost of the bill per person
- */
+const inputsValidation = () => {
+    if (billInput.value.length == 0) {
+        console.log('err 1');
+        return false;
+    }
 
-// const billInput = document.querySelector('#bill');
-// const tipInputs = document.querySelectorAll('input[name=tip]');
-// const numOfPeopleInput = document.querySelector('#num-people');
+    if (peopleCountInput.value.length == 0) {
+        console.log('err 2');
+        return false;
+    }
+}
 
 
+const calculateTip = () => {
+    let bill = parseFloat(billInput.value);
+    let tip = null;
+    let peopleCount = parseInt(peopleCountInput.value);
 
-// const getTipValue = () => {
-//     let tipValue;
+    if (customTipInput.value == 0) {
+        tipOptionRadios.forEach(option => {
+            if (option.checked) {
+                tip = parseInt(option.value);
+            }
+        });
+    } else {
+        tip = parseInt(customTipInput.value);
+    }
 
-//     if (document.querySelector('input[name=tip]#custom-tip-input').value.length == 0) {
-//         tipValue = document.querySelector('input[name=tip]:checked').value;
-//     } else {
-//         tipValue = document.querySelector('input[name=tip]#custom-tip-input').value;
-//     }
+    // Calculate tip amount and total
+    let tipAmount = (bill * (tip / 100)) / peopleCount;
+    let total = (bill / peopleCount) + tipAmount;
 
-//     console.log(tipValue);
-//     // return tipValue;
-// };
+    // Fill out results
+    tipAmountOutput.textContent = tipAmount;
+    totalOutput.textContent = total;
+}
 
-// tipInputs.forEach(tipInput => {
-//     tipInput.addEventListener('change', getTipValue);
-// });
+peopleCountInput.addEventListener('focusout', () => {
+    inputsValidation();
+    calculateTip();
+});
 
-// billInput.addEventListener('input', () => {
-//     // if(billInput.value.length > 0 && tip) {
+billInput.addEventListener('focusout', () => {
+    inputsValidation();
+    calculateTip();
+});
 
-//     // }
-//     console.log(billInput.value);
-// });
+tipOptionRadios.forEach(option => {
+    option.addEventListener('change', () => {
+        inputsValidation();
+        calculateTip();
+    });
+});
 
-const preDefTipValues = document.querySelectorAll('.tip-option-value');
-// const customTipValue = document.querySelector('#custom-tip-input');
-let tipValue = null;
-
-const updateTipValue = (newValue) => tipValue = newValue;
-
-// const calculateTip = (bill, tip, peopleCount) => {
-//     let tipAmount = (parseInt(bill) * (parseInt(tip) / 100)) / parseInt(peopleCount);
-//     let total = (bill / peopleCount) + tipAmount;
-//     return {
-//         'tipAmount': tipAmount,
-//         'total': total
-//     }
-// };
-
-// preDefTipValues.forEach(tip => {
-//     tip.addEventListener('change', () => {
-//         let htip = updateTipValue(tip.value);
-//         let result = calculateTip(100, htip, 5);
-//         console.log(result);
-//     });
-// });
-
-// customTipInput.addEventListener('input', () => {
-//     updateTipValue(customTipInput.value);
-// });
+customTipInput.addEventListener('focusout', () => {
+    inputsValidation();
+    calculateTip();
+});
