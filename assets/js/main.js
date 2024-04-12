@@ -10,6 +10,7 @@ const customTipInput = document.querySelector('#custom-tip-input');
 const peopleCountInput = document.querySelector('#num-people');
 const tipAmountOutput = document.querySelector('#tip-amount');
 const totalOutput = document.querySelector('#total');
+const resetBtn = document.querySelector('#reset-btn');
 
 const removeSelectedClass = (toRemoveFromElements) => {
     toRemoveFromElements.forEach(element => {
@@ -62,8 +63,8 @@ const calculateTip = () => {
     let total = (bill / peopleCount) + tipAmount;
 
     // Fill out results
-    tipAmountOutput.textContent = tipAmount;
-    totalOutput.textContent = total;
+    tipAmountOutput.textContent = tipAmount.toFixed(2);
+    totalOutput.textContent = total.toFixed(2);
 }
 
 peopleCountInput.addEventListener('focusout', () => {
@@ -86,4 +87,15 @@ tipOptionRadios.forEach(option => {
 customTipInput.addEventListener('focusout', () => {
     inputsValidation();
     calculateTip();
+});
+
+resetBtn.addEventListener('click', () => {
+    // Clear inputs
+    billInput.value = '';
+    customTipInput.value = '';
+    peopleCountInput.value = '';
+
+    // Clear output
+    tipAmountOutput.textContent = '0.00';
+    totalOutput.textContent = '0.00';
 });
