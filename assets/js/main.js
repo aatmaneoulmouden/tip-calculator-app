@@ -40,19 +40,23 @@ const inputsValidation = () => {
     // Bill input validation
     if (billInput.value.length == 0) {
         document.querySelector('#bill-error').textContent = errMessages.empty;
-        return false;
+        billInput.classList.add('has-error');
+    } else {
+        document.querySelector('#bill-error').textContent = '';
+        billInput.classList.remove('has-error');
     }
 
     // Num of People input validation
     if (peopleCountInput.value.length == 0) {
         document.querySelector('#num-people-error').textContent = errMessages.empty;
-        return false;
+        peopleCountInput.classList.add('has-error');
     } else if (peopleCountInput.value == 0) {
         document.querySelector('#num-people-error').textContent = errMessages.zero;
-        return false;
+        peopleCountInput.classList.add('has-error');
+    } else {
+        document.querySelector('#num-people-error').textContent = '';
+        peopleCountInput.classList.remove('has-error');
     }
-
-    return true;
 }
 
 
@@ -83,6 +87,10 @@ const calculateTip = () => {
 peopleCountInput.addEventListener('focusout', () => {
     inputsValidation();
     calculateTip();
+});
+
+peopleCountInput.addEventListener('input', () => {
+    inputsValidation();
 });
 
 billInput.addEventListener('focusout', () => {
