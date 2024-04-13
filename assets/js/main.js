@@ -89,14 +89,14 @@ peopleCountInput.addEventListener('focusout', () => {
     calculateTip();
 });
 
-peopleCountInput.addEventListener('input', () => {
-    inputsValidation();
-});
+peopleCountInput.addEventListener('input', inputsValidation);
 
 billInput.addEventListener('focusout', () => {
     inputsValidation();
     calculateTip();
 });
+
+billInput.addEventListener('input', inputsValidation);
 
 tipOptionRadios.forEach(option => {
     option.addEventListener('change', () => {
