@@ -76,8 +76,15 @@ const calculateTip = () => {
     }
 
     // Calculate tip amount and total
-    let tipAmount = (bill * (tip / 100)) / peopleCount;
-    let total = (bill / peopleCount) + tipAmount;
+    let tipAmount = 0;
+    let total = 0;
+    if (billInput.value.length == 0 || (peopleCountInput.value.length == 0 || peopleCountInput.value == 0)) {
+        tipAmount = 0;
+        total = 0;
+    } else {
+        tipAmount = (bill * (tip / 100)) / peopleCount;
+        total = (bill / peopleCount) + tipAmount;
+    }
 
     // Fill out results
     tipAmountOutput.textContent = tipAmount.toFixed(2);
