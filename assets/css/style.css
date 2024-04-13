@@ -624,6 +624,24 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.label-error-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label-error-container .error{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgba(218, 120, 102, 1);
+}
+
+.label-error-container .\!error{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgba(218, 120, 102, 1);
+}
+
 .tip-options input[type="radio"]{
   display: none;
 }
@@ -684,6 +702,10 @@ video {
 .input-field:focus{
   --tw-border-opacity: 1;
   border-color: hsl(172 67% 45% / var(--tw-border-opacity));
+}
+
+.input-field.has-error{
+  border-color: rgba(218, 120, 102, 1);
 }
 
 .input-field::-webkit-outer-spin-button,
@@ -791,7 +813,7 @@ video {
 }
 
 .\!results .value,
-    .\!results .currency{
+    .\!results .result-value{
   font-size: 2.25rem;
   line-height: 2.5rem;
   --tw-text-opacity: 1;
@@ -799,7 +821,7 @@ video {
 }
 
 .results .value,
-    .results .currency{
+    .results .result-value{
   font-size: 2.25rem;
   line-height: 2.5rem;
   --tw-text-opacity: 1;
@@ -814,7 +836,7 @@ video {
 }
 
 .\!results .value,
-    .\!results .currency{
+    .\!results .result-value{
   font-size: 2.25rem;
   line-height: 2.5rem;
   --tw-text-opacity: 1;
@@ -2310,11 +2332,6 @@ video {
   line-height: 1.75rem;
 }
 
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .font-bold{
   font-weight: 700;
 }
@@ -2408,11 +2425,6 @@ video {
 .text-very-dark-cyan{
   --tw-text-opacity: 1;
   color: hsl(183 100% 15% / var(--tw-text-opacity));
-}
-
-.text-rose-700{
-  --tw-text-opacity: 1;
-  color: rgb(190 18 60 / var(--tw-text-opacity));
 }
 
 .underline{

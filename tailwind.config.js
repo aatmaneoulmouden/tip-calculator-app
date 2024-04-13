@@ -24,6 +24,7 @@ module.exports = {
         'very-light-grayish-cyan': 'hsl(189, 41%, 97%)',
         'light-strong-cyan': 'hsl(173, 61%, 77%)',
         'white': 'hsl(0, 0%, 100%)',
+        'error': 'rgba(218, 120, 102, 1)',
       },
       boxShadow: {
         'main': 'rgba(94, 122, 125, 0.2) 0px 48px 100px 0px',

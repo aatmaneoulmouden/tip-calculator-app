@@ -31,15 +31,28 @@ customTipInput.addEventListener('focus', () => {
 
 
 const inputsValidation = () => {
+    // Error messages
+    let errMessages = {
+        'empty': "Can't be empty",
+        'zero': "Can't be zero",
+    }
+
+    // Bill input validation
     if (billInput.value.length == 0) {
-        console.log('err 1');
+        document.querySelector('#bill-error').textContent = errMessages.empty;
         return false;
     }
 
+    // Num of People input validation
     if (peopleCountInput.value.length == 0) {
-        console.log('err 2');
+        document.querySelector('#num-people-error').textContent = errMessages.empty;
+        return false;
+    } else if (peopleCountInput.value == 0) {
+        document.querySelector('#num-people-error').textContent = errMessages.zero;
         return false;
     }
+
+    return true;
 }
 
 

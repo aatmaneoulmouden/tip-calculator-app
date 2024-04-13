@@ -18,6 +18,14 @@
         @apply mb-7;
     }
 
+    .label-error-container {
+        @apply flex justify-between items-center;
+    }
+
+    .label-error-container .error {
+        @apply text-sm text-error;
+    }
+
     .tip-options input[type="radio"] {
         @apply hidden;
     }
@@ -36,6 +44,10 @@
 
     .input-field {
         @apply bg-transparent w-full py-3 px-4 rounded-md text-right text-xl text-very-dark-cyan border-2 border-transparent bg-very-light-grayish-cyan focus:border-strong-cyan placeholder:text-grayish-cyan;
+    }
+
+    .input-field.has-error {
+        @apply border-error;
     }
 
     .input-field::-webkit-outer-spin-button,
@@ -65,7 +77,7 @@
     }
 
     .results .value,
-    .results .currency {
+    .results .result-value {
         @apply text-4xl text-strong-cyan;
     }
 }
